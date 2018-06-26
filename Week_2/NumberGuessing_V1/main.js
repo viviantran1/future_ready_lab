@@ -40,7 +40,7 @@ function playGame(){
     var totalGuesses = 1;
 
     // loop until user guesses correct number
-    while(currentGuess != target) {
+    while(currentGuess != target || isNaN(currentGuess)) {
         if(currentGuess < from){
             currentGuess = parseInt(prompt("Enter a number greater than " + from));
             totalGuesses++
@@ -52,6 +52,9 @@ function playGame(){
             totalGuesses++
         } else if(currentGuess > target){
             currentGuess = parseInt(prompt("Enter a lower number"));
+            totalGuesses++
+        } else if (isNaN(currentGuess)){
+            currentGuess = parseInt(prompt("You did not enter a number! Please guess a number."))
             totalGuesses++
         }
     }
