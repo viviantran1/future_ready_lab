@@ -43,8 +43,10 @@ function playGame(){
     while(currentGuess != target) {
         if(currentGuess < from){
             currentGuess = parseInt(prompt("Enter a number greater than " + from));
+            totalGuesses++
         } else if(currentGuess > to){
             currentGuess = parseInt(prompt("Enter a number less than " + to));
+            totalGuesses++
         } else if(currentGuess < target){
             currentGuess = parseInt(prompt("Enter a higher number"));
             totalGuesses++
