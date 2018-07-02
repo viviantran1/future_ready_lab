@@ -53,7 +53,7 @@ function playGame(){
         } else if(currentGuess > target){
             currentGuess = parseInt(prompt("Enter a lower number"));
             totalGuesses++
-        } else if (isNaN(currentGuess)){
+        } else if(isNaN(currentGuess)){
             currentGuess = parseInt(prompt("You did not enter a number! Please guess a number."))
             totalGuesses++
         }
