@@ -11,7 +11,7 @@ var circle = {
 function setup() {
     createCanvas(640, 480);
     // random background color
-    background(Math.random() * 255, Math.random() * 255, Math.random() * 255);
+    background(Math.random() * 256, Math.random() * 256, Math.random() * 256);
     frameRate(30);
 }
 
@@ -20,18 +20,13 @@ function draw() {
     ellipse(circle.xCoor, circle.yCoor, circle.diameter);
     
     // if we hit edge of canvas
-    if(circle.xCoor > 640){
+    if(circle.xCoor > 640 || circle.xCoor < 0){
         // random color
         circle.color = [Math.random() * 255, Math.random() * 255, Math.random() * 255]
         // reverse direction
         circle.xSpeed = -circle.xSpeed;
-    } else if(circle.xCoor < 0){
-        circle.color = [Math.random() * 255, Math.random() * 255, Math.random() * 255]
-        circle.xSpeed = -circle.xSpeed;
-    } else if(circle.yCoor > 480){
-        circle.diameter = Math.random() * 50;
-        circle.ySpeed = -circle.ySpeed;
-    } else if(circle.yCoor < 0) {
+    }
+    if(circle.yCoor > 480 || circle.yCoor < 0){
         circle.diameter = Math.random() * 50;
         circle.ySpeed = -circle.ySpeed;
     }
